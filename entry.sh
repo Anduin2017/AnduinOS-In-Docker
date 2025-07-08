@@ -29,13 +29,12 @@ exec qemu-system-x86_64 \
     -m "$RAM" -mem-prealloc \
     -cpu host \
     -smp sockets=1,cores="$CORES",threads=1 \
-    # 只读加载 OVMF_CODE
     -drive if=pflash,format=raw,readonly=on,file="$UEFI_CODE" \
-    # 可写但临时的 vars 分区
     -drive if=pflash,format=raw,file="$TMP_VARS" \
     -global driver=cfi.pflash01,property=secure,value=on \
     -drive file="$IMG",if=virtio,format=qcow2,cache=none,discard=unmap \
-    -cdrom "$ISO" -boot d \
+    -drive file="$ISO",if=ide,media=cdrom,readonly=on \
+    -boot order=d \
     -vga virtio \
     -device virtio-keyboard-pci \
     -device virtio-tablet-pci \
