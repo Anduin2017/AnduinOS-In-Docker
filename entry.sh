@@ -59,7 +59,6 @@ QEMU_ARGS=(
     # 显卡和输入设备
     -vga virtio
     -device virtio-keyboard-pci
-    # --- 修改点在这里 ---
     # 使用绝对定位的 virtio-tablet-pci 来解决 VNC 鼠标漂移问题
     -device virtio-tablet-pci
 
@@ -67,16 +66,20 @@ QEMU_ARGS=(
     -netdev user,id=net0
     -device virtio-net-pci,netdev=net0
 
+    # 安装 ISO 文件
+    -drive "file=$ISO_FILE,media=cdrom"
+    -boot d # 从 CD-ROM 启动
+
     # VNC 输出
     -vnc "0.0.0.0:0"
 )
 
-# 首次启动时，从 ISO 安装系统
-if [ -f "$ISO_FILE" ]; then
-    echo "Attaching installation ISO: $ISO_FILE"
-    QEMU_ARGS+=(-drive "file=$ISO_FILE,media=cdrom")
-    QEMU_ARGS+=(-boot d) # 从 CD-ROM 启动
-fi
+# # 首次启动时，从 ISO 安装系统
+# if [ -f "$ISO_FILE" ]; then
+#     echo "Attaching installation ISO: $ISO_FILE"
+#     QEMU_ARGS+=(-drive "file=$ISO_FILE,media=cdrom")
+#     QEMU_ARGS+=(-boot d) # 从 CD-ROM 启动
+# fi
 
 # 执行 QEMU
 exec qemu-system-x86_64 "${QEMU_ARGS[@]}"
