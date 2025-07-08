@@ -25,7 +25,7 @@ chmod 600 "$TMP_VARS"
 
 # 4. 启动 VM
 exec qemu-system-x86_64 \
-    -machine ubuntu-q35,accel=kvm \
+    -machine q35,accel=kvm \
     -m "$RAM" -mem-prealloc \
     -cpu host \
     -smp sockets=1,cores="$CORES",threads=1 \
