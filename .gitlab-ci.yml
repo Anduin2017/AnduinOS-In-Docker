@@ -4,9 +4,6 @@ stages:
 deploy_docker_registry:
   stage: deploy
   environment: production
-  needs: 
-    - lint
-    - test
   script:
     - if [ "$CI_COMMIT_REF_NAME" = "master" ]; then TAG="latest"; else TAG="$CI_COMMIT_REF_NAME"; fi
     - echo building image hub.aiursoft.cn/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$TAG
