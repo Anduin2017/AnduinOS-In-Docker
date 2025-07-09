@@ -18,14 +18,14 @@ This repository provides a Docker container to run AnduinOS. Only Linux is suppo
 To run AnduinOS in Docker, you can use the pre-built image available on Docker Hub:
 
 ```bash
-docker pull anduin2019/anduinos-home
+docker pull anduin2019/anduinos-in-docker
 mkdir -p vm_data
 docker run -it \
   --device /dev/kvm \
   -p 8080:8080 \
   -p 5900:5900 \
   -v ./vm_data:/data/vmdisk \
-  anduin2019/anduinos-home
+  anduin2019/anduinos-in-docker
 ```
 
 ## Build from source
