@@ -1,4 +1,4 @@
-FROM hub.aiursoft.cn/aiursoft/internalimages/ubuntu:latest
+FROM hub.aiursoft.com/aiursoft/internalimages/ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
