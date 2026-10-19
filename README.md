@@ -1,8 +1,8 @@
 # AnduinOS in Docker
 
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.com/anduin/AnduinOS-In-Docker/-/blob/master/LICENSE)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Anduin2017/anduinos-in-docker/blob/master/LICENSE)
 [![Pipeline stat](https://gitlab.aiursoft.com/anduin/AnduinOS-In-Docker/badges/master/pipeline.svg)](https://gitlab.aiursoft.com/anduin/AnduinOS-In-Docker/-/pipelines)
-[![ManHours](https://manhours.aiursoft.com/r/gitlab.aiursoft.com/anduin/anduinos-in-docker.svg)](https://gitlab.aiursoft.com/anduin/AnduinOS-In-Docker/-/commits/master?ref_type=heads)
+[![ManHours](https://manhours.aiursoft.com/r/github.com/Anduin2017/anduinos-in-docker.svg)](https://github.com/Anduin2017/anduinos-in-docker/commits/master)
 [![Docker](https://img.shields.io/docker/pulls/anduin2019/anduinos-in-docker.svg)](https://hub.docker.com/r/anduin2019/anduinos-in-docker)
 
 This repository provides a Docker container to run AnduinOS. Only Linux is supported.
